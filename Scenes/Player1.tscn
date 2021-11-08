@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Images/icon.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Player1.gd" type="Script" id=2]
+[ext_resource path="res://Images/alva.jpg" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 57, 11 )
+
+[node name="Player1" type="KinematicBody2D"]
+position = Vector2( -1, 1 )
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 28.2129, 31.9726, 32.0089, 28.333, 31.9999, -27.7947, 28.1263, -31.9332, -28.0815, -32.0003, -31.9927, -28.0007, -32.053, 28.6772, -28.2988, 32.0977 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -1.07288e-06 )
+scale = Vector2( 0.0711111, 0.0711111 )
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 92, 2 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Sprite" type="Sprite" parent="Area2D/Hitbox"]
+visible = false
+scale = Vector2( 1.78125, 0.34375 )
+texture = ExtResource( 1 )
